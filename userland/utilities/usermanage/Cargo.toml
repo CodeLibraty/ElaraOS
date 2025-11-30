@@ -1,0 +1,17 @@
+[package]
+name = "usermanage"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+nix = { version = "0.26", features = ["user", "fs", "term"] }
+pwhash = "1.0"
+rand = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.8"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
